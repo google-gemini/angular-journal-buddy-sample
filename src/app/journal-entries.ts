@@ -121,7 +121,7 @@ export class JournalEntries {
         },
         {
           "date": "2024-05-20",
-          "entry": "Eureka moment!  After hours of pulling my hair out, I finally figured out that stupid latency problem. It was a conflict with a third-party library I was using.  Switched it out, and now the whole thing is blazing fast.  Feeling like a coding ninja – this sense of accomplishment is addictive. I'm starting to research what it takes to build a proper web app around this.  Domain names, cloud servers, the whole nine yards. It's a lot more complicated than I realized, but there's a ton of good info out there."
+          "entry": "Eureka moment!  After hours of pulling my hair out, I finally figured out that latency problem. It was a conflict with a third-party library I was using.  Switched it out, and now the whole thing is blazing fast.  Feeling like a coding ninja – this sense of accomplishment is addictive. I'm starting to research what it takes to build a proper web app around this.  Domain names, cloud servers, the whole nine yards. It's a lot more complicated than I realized, but there's a ton of good info out there."
         },
         {
           "date": "2024-05-25",
