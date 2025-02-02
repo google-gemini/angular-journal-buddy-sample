@@ -1,6 +1,6 @@
-# Journal Buddy - Gemini Sample
+# Journal with Gemini
 
-Developer sample written in Angular, demonstrating how to use the Gemini API to ask questions about a daily journal using natural language prompts.
+Get started with the Gemini API by asking questions about your journal.
 
 <a href="https://idx.google.com/import?url=https://github.com/google-gemini/angular-journal-buddy-sample">
 <picture>
@@ -10,26 +10,36 @@ Developer sample written in Angular, demonstrating how to use the Gemini API to 
 </picture>
 </a>
 
-## Gemini API Key
+## Basic request
 
-Running this app requires pasting in a Gemini API key.
+To send your first API request with the [Gemini API JavaScript SDK](https://github.com/google-gemini/generative-ai-js), make sure you have the right dependencies installed (see installation steps below) and then run the following code:
 
-Caution: **Using the Google AI SDK for JavaScript directly from a client-side
-app is recommended for prototyping only.** For non-prototyping use cases, we
-strongly recommend that you call the Google AI Gemini API only server-side to
-keep your API key safe. If you embed your API key directly in your JavaScript
-app or fetch it remotely at runtime, you risk potentially exposing your API key
-to malicious actors.
+```javascript
+const { GoogleGenerativeAI } = require("@google/generative-ai");
 
+const genAI = new GoogleGenerativeAI("GEMINI_API_KEY");
+const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash" });
 
-## Development server
+const prompt = "Explain how AI works";
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+const result = await model.generateContent(prompt);
+console.log(result.response.text());
+```
 
-## Build
+## Setup
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+1. If you don’t have Angualr installed, install it [from Angular.io](https://angular.io/cli).
 
-## Further help
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+2. [Clone](https://docs.github.com/en/repositories/creating-and-managing-repositories/cloning-a-repository) this repository.
 
+3. Install the requirements:
+
+   ```bash
+   $ npm install
+   ```
+
+4. Run the app:
+
+Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files. Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+
+5. Paste your [API key](https://ai.google.dev/gemini-api/docs/api-key) in the frontend, note this is generally a bad practice and is just shown here for simplicity.
